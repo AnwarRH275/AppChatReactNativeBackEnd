@@ -70,6 +70,7 @@ io.on("connection", (socket) => {
    console.log(getMessages(roomId)) 
    socket.join(roomId);
    io.to(roomId).emit('messages',getMessages(roomId)); 
+   
 })
 });
 
