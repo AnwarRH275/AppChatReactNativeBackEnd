@@ -68,7 +68,8 @@ io.on("connection", (socket) => {
     console.log(messageText);
     addMessages(userName, roomId,messageText);
    console.log(getMessages(roomId)) 
-     io.emit('messages',getMessages(roomId)); 
+   socket.join(roomId);
+   io.to(roomId).emit('messages',getMessages(roomId)); 
 })
 });
 
